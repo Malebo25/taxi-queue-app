@@ -1,44 +1,47 @@
 function TaxiQueue() {
-	let taxiPassenger = [];
-	let taxi = [];
+	let taxiPassenger = 0;
+	let taxi = 0;
 	function joinQueue() {
-		if (taxiPassenger.length <= 12) {
+		if (taxiPassenger <= 12) {
 			
-			taxiPassenger.push(1);
+			taxiPassenger++;
 		}
-		else {
-			taxi = [];
+		 else {
+		 	taxiPassenger=0;
 		} 
 
 	}
 
 	function leaveQueue() {
-		taxiPassenger.pop(1);
+		if (taxiPassenger > 0) {
+			
+			taxiPassenger--
+		}
 	}
 
 	function joinTaxiQueue() {
-		if (taxiPassenger.length <= 12) {
-			taxiPassenger.push(1);
+		if (taxiPassenger <= 12) {
+			taxiPassenger++;
 			
-			taxi.push(1);
+			taxi++;
 		}
 		else {
-			return false;
+			taxi=0;
 		}
 	}
 
 	function queueLength() {
-		return taxiPassenger.length;
+		return taxiPassenger;
 
 	}
 
 	function taxiQueueLength() {
-		return taxi.length;
+		return taxi;
 
 	}
 
 	function taxiDepart() {
-		taxi.pop(1);
+		taxi--;
 
 	}
 
