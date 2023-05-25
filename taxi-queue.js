@@ -2,12 +2,13 @@ function TaxiQueue() {
 	let taxiPassenger = 0;
 	let taxi = 0;
 	function joinQueue() {
-		if (taxiPassenger <= 12) {
+		if (taxiPassenger < 12) {
 			
 			taxiPassenger++;
 		}
 		 else {
-		 	taxiPassenger=0;
+			taxiPassenger = 0;
+			
 		} 
 
 	}
@@ -20,7 +21,7 @@ function TaxiQueue() {
 	}
 
 	function joinTaxiQueue() {
-		if (taxiPassenger <= 12) {
+		if (taxiPassenger < 12) {
 			taxiPassenger++;
 			
 			taxi++;
@@ -41,7 +42,10 @@ function TaxiQueue() {
 	}
 
 	function taxiDepart() {
-		taxi--;
+		if (taxi > 0) {
+			
+			taxi--;
+		}
 
 	}
 
