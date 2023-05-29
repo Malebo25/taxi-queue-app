@@ -27,6 +27,7 @@ joinBtn.addEventListener("click", function () {
 leaveBtn.addEventListener("click", function () {
   taxiQueue.leaveQueue();
   passengerCounter.innerHTML = taxiQueue.queueLength();
+   localStorage.setItem("numPassengers", taxiQueue.queueLength());
 });
 
 taxiJoinBtn.addEventListener("click", function () {
